@@ -5,7 +5,7 @@ import QuestionCard from './components/QuestionCard';
 // types
 import { QuestionState, Difficulty} from './API';
 
-type AnswerObject = {
+export type AnswerObject = {
   question: string;
   answer: string;
   correct: boolean;
@@ -67,12 +67,12 @@ const App = () => {
     } else {
       setNumber(nextQuestion);
     }
-  }
+  }; 
 
   return (
     <div className="App">
       <h1>
-        Welcome to React Quiz
+        Welcome to React Quizz
       </h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
       <button className="start" onClick={startTrivia}>Start</button>
