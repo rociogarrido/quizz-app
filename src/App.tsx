@@ -23,7 +23,8 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  console.log(fetchQuizzQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
+  // console.log(fetchQuizzQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
+  // console.log(questions);
   
   const startTrivia = async () => {
     setLoading(true);
@@ -49,15 +50,20 @@ const App = () => {
       <h1>
         Welcome to React Quiz
       </h1>
+      {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
       <button className="start" onClick={startTrivia}>Start</button>
-      <p className="score">Score:</p>
-      <p>Loading Questions ...</p>
-      <QuestionCard questionNumber={number + 1} 
+      ) : null}
+
+      {!gameOver ? <p className="score">Score:</p> : null}
+      {loading ? <p>Loading Questions ...</p> : null}
+      {/*<QuestionCard 
+      questionNumber={number + 1} 
       totalQuestions={TOTAL_QUESTIONS} 
       question={questions[number].question} 
       answers={questions[number].answers} 
       userAnswer={userAnswers ? userAnswers[number] : undefined} 
-      callback={checkAnswer} />
+      callback={checkAnswer} 
+      /> */}
         <button className="next" onClick={nextQuestion}>Next Question</button>
     </div>
   );
