@@ -3,7 +3,7 @@ import { fetchQuizzQuestions } from './API';
 // components
 import QuestionCard from './components/QuestionCard';
 // types
-import { QuestionState, Difficulty} from './API';
+import { QuestionState, Difficulty } from './API';
 // styles
 import { GlobalStyle, Wrapper } from './App.styles';
 
