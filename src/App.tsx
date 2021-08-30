@@ -4,6 +4,8 @@ import { fetchQuizzQuestions } from './API';
 import QuestionCard from './components/QuestionCard';
 // types
 import { QuestionState, Difficulty} from './API';
+// styles
+import { GlobalStyle } from './App.styles';
 
 export type AnswerObject = {
   question: string;
@@ -70,6 +72,8 @@ const App = () => {
   }; 
 
   return (
+    <>
+    <GlobalStyle />
     <div className="App">
       <h1>
         Welcome to React Quizz
@@ -95,6 +99,8 @@ const App = () => {
         <button className="next" onClick={nextQuestion}>Next Question</button>
       ) : null} 
     </div>
+
+    </>
   );
 }
 
