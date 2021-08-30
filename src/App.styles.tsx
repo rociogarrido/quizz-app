@@ -61,3 +61,4 @@ export const Wrapper = styled.div`
         max-width: 200px;
     }
 `;
+
