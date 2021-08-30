@@ -1,3 +1,5 @@
+import { shuffleArray } from "./utils";
+
 export type Question = {
     category: string;
     correct_answer: string;
@@ -25,10 +27,4 @@ export const fetchQuizzQuestions = async (amount: number, difficulty: Difficulty
             answers: shuffleArray([...question.incorrect_answers, question.correct_answer])
         }
     ));
-    
-    return data.results.map((question: any) => ({
-        question: question.question,
-        answer: question.correct_answer,
-        option: question.incorrect_answers.concat(question.correct_answer),
-    }));
 };
